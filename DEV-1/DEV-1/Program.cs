@@ -13,11 +13,23 @@ namespace DEV_1
     {
         static void Main(string[] args)
         {
-            if (args[0].Length < 2)
+            for (int i = 0; i < args.Length; i++)
             {
-                throw new ArgumentException("Cannot be less than 2!");
+                if (args.Length == 0)
+                {
+                    throw new ArgumentException("Error!Array cannot be null!");
+                }
+                else if (args[i].Length < 2)
+                {
+                    Console.WriteLine($"String's length less than 2. String number {i + 1} entered incorrectly");
+                }
+                else
+                {
+                    Console.WriteLine($"String {args[i]}:");
+                    SubstringSeach.SearchMethod(args[i]);
+                }                 
             }
-            SubstringSeach.SearchMethod(args[0]);
+            
         }
     }
 }
