@@ -13,13 +13,13 @@ namespace DEV_1
     {
         static void Main(string[] args)
         {
+            if (args.Length == 0)
+            {
+                throw new ArgumentException("Error!Array cannot be null!");
+            }
             for (int i = 0; i < args.Length; i++)
             {
-                if (args.Length == 0)
-                {
-                    throw new ArgumentException("Error!Array cannot be null!");
-                }
-                else if (args[i].Length < 2)
+                if (args[i].Length < 2)
                 {
                     Console.WriteLine($"String's length less than 2. String number {i + 1} entered incorrectly");
                 }
