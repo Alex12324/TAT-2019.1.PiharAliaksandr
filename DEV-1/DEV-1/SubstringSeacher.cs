@@ -1,17 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DEV_1
 {   /// <summary>
     /// In the class there is a method realized which displays all the substrings(two and more symbols),
     /// where there are no any two subsequent repeated symbols.
     /// </summary>
-    public class SubstringSeach
+    class SubstringSeacher
     {
-        public static void SearchMethod(string substring)
+        private string substring;
+        public SubstringSeacher(string test_string)
+        {   
+            if (test_string.Length < 2)
+            {
+                throw new FormatException("String's length less than 2");
+            }
+            else
+            {
+                substring = test_string;
+            }
+
+        }
+        public List<string> SearchSubsequent()
         {
             List<string> ListOfSubstrings = new List<string>();
             for (int i = 0; i < substring.Length - 1; i++)
@@ -25,7 +35,6 @@ namespace DEV_1
                     }
                     else
                     {
-                        mainString = null;
                         break;
                     }
                     if (!ListOfSubstrings.Contains(mainString) && mainString.Length > 1)
@@ -34,7 +43,11 @@ namespace DEV_1
                     }
                 }
             }
-            foreach (var elements in ListOfSubstrings)
+            return ListOfSubstrings;
+        }
+        public void DisplaysSubsequent(List<string> ListOfSubstrings)
+        {
+            foreach(var elements in ListOfSubstrings)
             {
                 Console.WriteLine(elements);
             }
