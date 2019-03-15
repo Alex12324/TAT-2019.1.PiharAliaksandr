@@ -225,6 +225,12 @@ namespace DEV_2
                     {
                         ListOfLetters[i].Current = elem.Key;
                     }
+                    if (ListOfLetters[ListOfLetters.Count - 2].Current == elem.Key 
+                        && ListOfLetters[ListOfLetters.Count - 1].Current == "ь"
+                        && ListOfRinging.Contains(ListOfLetters[i].Current))
+                    {
+                        ListOfLetters[ListOfLetters.Count - 2].Current = elem.Value;
+                    }
                 }   
             }
         }
