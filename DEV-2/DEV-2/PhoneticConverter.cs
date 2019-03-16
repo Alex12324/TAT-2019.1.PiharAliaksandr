@@ -16,7 +16,8 @@ namespace DEV_2
             "ы", "у", "ю", "я" };
         private readonly List<string> ListOfConsonants = new List<string> { "б", "в", "г", "д", "й", "ж",
             "з", "к", "л", "м", "н","п", "р", "с", "т", "ф", "х", "ц", "ч", "ш", "щ" };
-        private readonly List<string> ListOfDeaf = new List<string> { "п", "ф", "к", "с", "т", "ш" };
+        private readonly List<string> ListOfDeaf = new List<string> { "п", "ф", "к", "с", "т",
+            "ш","ч", "щ", "ц","х" };
         private readonly List<string> ListOfRinging = new List<string> { "б", "в", "г", "з", "д", "ж" };
         private readonly KeyValuePair<string, string>[] SoftVowels = new KeyValuePair<string, string>[]
         {
@@ -230,6 +231,11 @@ namespace DEV_2
                         && ListOfRinging.Contains(ListOfLetters[i].Current))
                     {
                         ListOfLetters[ListOfLetters.Count - 2].Current = elem.Value;
+                    }
+                    if (ListOfLetters[i].Current == "ь" && ListOfRinging.Contains(ListOfLetters[i].Next)
+                        && ListOfDeaf.Contains(ListOfLetters[i].Prev) && ListOfLetters[i - 1].Current == elem.Value)  
+                    {
+                        ListOfLetters[i - 1].Current = elem.Key; 
                     }
                 }   
             }
