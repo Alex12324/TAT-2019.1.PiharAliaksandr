@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Display.cs" />
     <Compile Include="Employee.cs" />
     <Compile Include="EntryPoint.cs" />
     <Compile Include="FirstCriterion.cs" />
@@ -54,6 +55,7 @@
     <Compile Include="Recruitment.cs" />
     <Compile Include="SecondCriterion.cs" />
     <Compile Include="Senior.cs" />
+    <Compile Include="ThirdCriterion.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

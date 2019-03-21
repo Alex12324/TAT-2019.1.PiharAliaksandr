@@ -1,18 +1,29 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DEV_3
 {
+    /// <summary>
+    /// This is the second criterion.Condition:the minimum cost for a fixed productivity.
+    /// </summary>
     class SecondCriterion : Recruitment
     {
         public SecondCriterion(int Amount,int Efficiency)
-        {
-            this.Amount = Amount;
-            this.Efficiency = Efficiency;
+        {   
+            if (Amount < 0)
+            {
+                throw new Exception("You don't have money. ");
+            }
+            else
+            {
+                this.Amount = Amount;
+                this.Efficiency = Efficiency;
+            }
         }
+        /// <summary>
+        /// Method which realizes this criterion.
+        /// </summary>
+        /// <returns>List of number of employees to order</returns>
         public override List<int> Choose()
         {
             while (Efficiency > 0)

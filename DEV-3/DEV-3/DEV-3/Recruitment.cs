@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace DEV_3
 {
+    /// <summary>
+    /// The main class of my criteria.
+    /// </summary>
     abstract class Recruitment
     {
         public int Amount { get; protected set; }

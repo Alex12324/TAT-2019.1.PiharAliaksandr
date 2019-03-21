@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DEV_3
 {
@@ -40,14 +37,15 @@ namespace DEV_3
                 }
                 else if (criterion == 3)
                 {
-
+                    Recruitment obj = new ThirdCriterion(amount, efficiency);
+                    list = comp.GetEmployee(obj);
                 }
                 else
                 {
                     throw new Exception("This criterion doesn't exist.");
                 }
-                Console.WriteLine($"Lead : {list[0]}\nSenior : { list[1]}\n" +
-                $"Middle : { list[2]}\nJunior : { list[3]}");
+                Display DispOfList = new Display();
+                DispOfList.DisplaysList(list);
             }
             catch(Exception ex)
             {
