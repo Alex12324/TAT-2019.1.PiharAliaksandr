@@ -8,40 +8,43 @@ namespace DEV_3
 {
     class FirstCriterion : Recruitment
     {   
-        public FirstCriterion(int Amout)
+        public FirstCriterion(int Amount)
         {
-            this.Amout = Amout;
+            if (Amount > 0)
+            {
+                this.Amount = Amount;
+            }
+            else
+            {
+                throw new Exception("Not enough money.");
+            }
         }
         /// <summary>
         /// This method counts the maximum productivity within the amount.
         /// </summary>
         public override List<int> Choose()
         {
-            Junior objJunior = new Junior();
-            Middle objMiddle = new Middle();
-            Senior objSenior = new Senior();
-            Lead objLead = new Lead();
-            while (Amout > 0)
+            while (Amount > 0)
             {
-                if (objLead.Salary < Amout)
+                if (objLead.Salary < Amount)
                 {
                     ListOfEmployee[0]++;
-                    Amout -= objLead.Salary;
+                    Amount -= objLead.Salary;
                 }
-                else if (objSenior.Salary < Amout)
+                else if (objSenior.Salary < Amount)
                 {
                     ListOfEmployee[1]++;
-                    Amout -= objSenior.Salary;
+                    Amount -= objSenior.Salary;
                 }
-                else if (objMiddle.Salary < Amout)
+                else if (objMiddle.Salary < Amount)
                 {
                     ListOfEmployee[2]++;
-                    Amout -= objMiddle.Salary;
+                    Amount -= objMiddle.Salary;
                 }
-                else if (objJunior.Salary < Amout)
+                else if (objJunior.Salary < Amount)
                 {
                     ListOfEmployee[3]++;
-                    Amout -= objJunior.Salary;
+                    Amount -= objJunior.Salary;
                 }
                 else
                 {

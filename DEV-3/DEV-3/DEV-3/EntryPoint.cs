@@ -19,23 +19,24 @@ namespace DEV_3
         {
             /// Junior(500,10),Middle(1050,25),Senior(1700,45),Lead(2450,70)
             try
-            {
+            {   
                 List<int> list = new List<int>();
                 Console.WriteLine("Select a criterion : ");
                 int criterion = Int32.Parse(Console.ReadLine());
                 Console.WriteLine("Enter your funds :");
-                int amout = Int32.Parse(Console.ReadLine());
+                int amount = Int32.Parse(Console.ReadLine());
                 Console.WriteLine("Enter the required efficiency :");
                 int efficiency = Int32.Parse(Console.ReadLine());
                 Company comp = new Company();
                 if (criterion == 1)
                 {
-                    Recruitment obj = new FirstCriterion(amout);
+                    Recruitment obj = new FirstCriterion(amount);
                     list = comp.GetEmployee(obj);
                 }
                 else if (criterion == 2)
                 {
-
+                    Recruitment obj = new SecondCriterion(amount, efficiency);
+                    list = comp.GetEmployee(obj);
                 }
                 else if (criterion == 3)
                 {
