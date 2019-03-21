@@ -7,14 +7,13 @@ using System.Threading.Tasks;
 namespace DEV_3
 {
     /// <summary>
-    /// My class Junior which inherited from Employee.
+    /// This class selects personnel according to the criteria.
     /// </summary>
-    class Junior : Employee
-    {   
-        public Junior()
+    class Company
+    {
+        public List<int> GetEmployee(Recruitment rec)
         {
-            Salary += 500;
-            Productivity += 10;
+            return rec.Choose();
         }
     }
 }
