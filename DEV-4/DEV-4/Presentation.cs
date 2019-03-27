@@ -33,7 +33,7 @@ namespace DEV_4
         }
         public object Clone()
         {
-            return new Presentation(Data.discription, URI, FormatOfPresentation,Data.id);
+            return new Presentation(Data.description, URI, FormatOfPresentation,Data.id);
         }
     }
 }

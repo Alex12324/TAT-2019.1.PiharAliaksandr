@@ -30,12 +30,12 @@ namespace DEV_4
                 }
             }
         }
-        public Lectures(string discription, string text) : base(discription)
+        public Lectures(string description, string text) : base(description)
         {
             this.Text = text;
         }
-        private Lectures(string discription, string text, List<Presentation> ListOfPresentations,
-            List<SeminarSession> ListOfSeminars, List<LaboratoryResearchcs> ListOfLabworks,string id) : this(discription, text)
+        private Lectures(string description, string text, List<Presentation> ListOfPresentations,
+            List<SeminarSession> ListOfSeminars, List<LaboratoryResearchcs> ListOfLabworks,string id) : this(description, text)
         {
             this.ListOfPresentations = new List<Presentation>();
             this.ListOfSeminars = new List<SeminarSession>();
@@ -84,7 +84,7 @@ namespace DEV_4
                 for (int i = 0; i < count; i++)
                 {
                     Console.WriteLine("Enter description,format and uri in that order ");
-                    ListOfSeminars.Add(new SeminarSession(this.Data.Discription));
+                    ListOfSeminars.Add(new SeminarSession(this.Data.Description));
                 }
             }
             else
@@ -117,7 +117,7 @@ namespace DEV_4
         }
         public object Clone()
         {
-            return new Lectures(this.Data.discription,this.text,this.ListOfPresentations,this.ListOfSeminars,this.ListOfLabworks,this.Data.id);
+            return new Lectures(this.Data.description,this.text,this.ListOfPresentations,this.ListOfSeminars,this.ListOfLabworks,this.Data.id);
         }
     }
 }

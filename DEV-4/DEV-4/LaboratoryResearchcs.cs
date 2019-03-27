@@ -18,7 +18,7 @@ namespace DEV_4
         }
         public object Clone()
         {
-            return new LaboratoryResearchcs(Data.Discription,Data.id);
+            return new LaboratoryResearchcs(Data.Description,Data.id);
         }
     }
 }

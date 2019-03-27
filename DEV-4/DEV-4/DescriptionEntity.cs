@@ -8,13 +8,13 @@ namespace DEV_4
 {
     class DescriptionEntity
     {
-        public string discription;
+        public string description;
         public string id;
-        public string Discription
+        public string Description
         {
             get
             {
-                return discription;
+                return description;
             }
             set
             {
@@ -24,21 +24,21 @@ namespace DEV_4
                 }
                 else
                 {
-                    this.discription = value;
+                    this.description = value;
                 }
             }
         }
         public DescriptionEntity()
         {
-            id = StringExpansion.GetID(Discription);
+            id = StringExpansion.GetID(Description);
         }
         public DescriptionEntity(string Discription) : this()
         {
-            this.Discription = Discription;
+            this.Description = Discription;
         }
         public object Clone()
         {
-            return new DescriptionEntity(this.discription);
+            return new DescriptionEntity(this.description);
         }
     }
 }

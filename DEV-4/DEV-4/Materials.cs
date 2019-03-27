@@ -8,7 +8,7 @@ namespace DEV_4
 {
     abstract class Materials 
     {
-        protected DescriptionEntity Data { get; set; }
+        public DescriptionEntity Data { get; set; }
         
         public Materials(string Discription = null)
         {
@@ -20,7 +20,7 @@ namespace DEV_4
         }
         public override string ToString()
         {
-            return $"Discription : {Data.Discription}";
+            return $"Discription : {Data.Description}";
         }
         public override bool Equals(object obj)
         {
