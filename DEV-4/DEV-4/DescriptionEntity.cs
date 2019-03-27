@@ -2,6 +2,9 @@
 
 namespace DEV_4
 {
+    /// <summary>
+    /// Class for containing general information of entities (GUID and Description).
+    /// </summary>
     class DescriptionEntity
     {
         public string description;
@@ -24,14 +27,28 @@ namespace DEV_4
                 }
             }
         }
+
+        /// <summary>
+        /// The class constructor.
+        /// </summary>
         public DescriptionEntity()
         {
             id = StringExpansion.GetID(Description);
         }
-        public DescriptionEntity(string Discription) : this()
+
+        /// <summary>
+        /// The class constructor.
+        /// </summary>
+        /// <param name="Description"></param>
+        public DescriptionEntity(string Description) : this()
         {
-            this.Description = Discription;
+            this.Description = Description;
         }
+
+        /// <summary>
+        /// This method returns copy of DescriptionEntity object.
+        /// </summary>
+        /// <returns></returns>
         public object Clone()
         {
             return new DescriptionEntity(this.description);

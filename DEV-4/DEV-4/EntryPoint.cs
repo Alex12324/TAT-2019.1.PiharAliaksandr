@@ -7,13 +7,17 @@ namespace DEV_4
     /// </summary>
     class EntryPoint
     {   
+        /// <summary>
+        /// Entry point function.
+        /// </summary>
+        /// <param name="args"></param>
         static void Main(string[] args)
         {
             try
             {
-                Lectures l = new Lectures("Матанализ","vesjbhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhrbevebv");
+                ///Here you can define the discipline which will include lectures, seminars, laboratory classes.
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Console.WriteLine($"Error! {ex.Message}");
             }

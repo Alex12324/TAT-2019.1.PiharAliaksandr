@@ -3,6 +3,9 @@ using System.Collections.Generic;
 
 namespace DEV_4
 {
+    /// <summary>
+    /// Lecture class.
+    /// </summary>
     class Lectures : Materials
     {
         public List<Presentation> ListOfPresentations = new List<Presentation>();
@@ -27,10 +30,26 @@ namespace DEV_4
                 }
             }
         }
+
+        /// <summary>
+        /// Class constructor.
+        /// </summary>
+        /// <param name="description"></param>
+        /// <param name="text"></param>
         public Lectures(string description, string text) : base(description)
         {
             this.Text = text;
         }
+
+        /// <summary>
+        /// The private class constructor for making deep copy of this object.
+        /// </summary>
+        /// <param name="description"></param>
+        /// <param name="text"></param>
+        /// <param name="ListOfPresentations"></param>
+        /// <param name="ListOfSeminars"></param>
+        /// <param name="ListOfLabworks"></param>
+        /// <param name="id"></param>
         private Lectures(string description, string text, List<Presentation> ListOfPresentations,
             List<SeminarSession> ListOfSeminars, List<LaboratoryResearchcs> ListOfLabworks,string id) : this(description, text)
         {
@@ -51,6 +70,11 @@ namespace DEV_4
             }
             this.Data.id = id;
         }
+
+        /// <summary>
+        /// The method that adds the presentation.
+        /// </summary>
+        /// <returns></returns>
         public List<Presentation> AddingPresentation()
         {
             Console.WriteLine("Enter how many presentations you want to add :");
@@ -72,6 +96,11 @@ namespace DEV_4
             }
             return ListOfPresentations;
         }
+
+        /// <summary>
+        /// The method that adds the SeminarSession.
+        /// </summary>
+        /// <returns></returns>
         public List<SeminarSession> AddingSeminarSession()
         {
             Console.WriteLine("Enter how many seminars you want to add :");
@@ -90,6 +119,11 @@ namespace DEV_4
             }
             return ListOfSeminars;
         }
+
+        /// <summary>
+        /// The method adds count number of presentations.
+        /// </summary>
+        /// <returns></returns>
         public List<LaboratoryResearchcs> ListOfLabs()
         {
             Console.WriteLine("Enter how many labs you want to add :");
@@ -108,13 +142,23 @@ namespace DEV_4
             }
             return ListOfLabworks;
         }
+
+        /// <summary>
+        /// Methid which returns id.
+        /// </summary>
+        /// <returns></returns>
         public override string GetID()
         {
             return this.Data.id;
         }
+
+        /// <summary>
+        /// This method returns copy of Lectures object.
+        /// </summary>
+        /// <returns></returns>
         public object Clone()
         {
-            return new Lectures(this.Data.description,this.text,this.ListOfPresentations,this.ListOfSeminars,this.ListOfLabworks,this.Data.id);
+            return new Lectures(this.Data.Description,this.text,this.ListOfPresentations,this.ListOfSeminars,this.ListOfLabworks,this.Data.id);
         }
     }
 }
