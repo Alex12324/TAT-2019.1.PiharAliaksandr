@@ -14,6 +14,10 @@ namespace DEV_4
         {
             Data = new DescriptionEntity(Discription);
         }
+        private Materials(DescriptionEntity data)
+        {
+            this.Data = (DescriptionEntity)data.Clone();
+        }
         public override string ToString()
         {
             return $"Discription : {Data.Discription}";
@@ -28,6 +32,10 @@ namespace DEV_4
             {
                 return false;
             }
+        }
+        public object Clone()
+        {
+            return new DescriptionEntity();
         }
         public virtual string GetID()
         {

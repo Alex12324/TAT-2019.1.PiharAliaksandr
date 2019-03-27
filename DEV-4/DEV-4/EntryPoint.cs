@@ -16,13 +16,6 @@ namespace DEV_4
             try
             {
                 Lectures l = new Lectures("Матанализ","vesjbhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhrbevebv");
-                Console.WriteLine(l);
-                Console.WriteLine(l.text);
-                Console.WriteLine(l.GetID());
-                Presentation a = new Presentation("Matan", "PDF", "ccsv");
-                Console.WriteLine(a);
-                Console.WriteLine(a.URI);
-                Console.WriteLine(a.GetID());
             }
             catch(Exception ex)
             {

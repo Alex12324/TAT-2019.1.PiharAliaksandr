@@ -28,10 +28,17 @@ namespace DEV_4
                 }
             }
         }
-        public DescriptionEntity(string Discription)
+        public DescriptionEntity()
         {
             id = StringExpansion.GetID(Discription);
+        }
+        public DescriptionEntity(string Discription) : this()
+        {
             this.Discription = Discription;
+        }
+        public object Clone()
+        {
+            return new DescriptionEntity(this.discription);
         }
     }
 }

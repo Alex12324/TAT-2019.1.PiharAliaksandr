@@ -19,11 +19,21 @@ namespace DEV_4
                 FormatOfPresentation = format;
             }
             else
+            {
                 FormatOfPresentation = "Unknown";
+            }        
+        }
+        private Presentation(string discription, string uri, string format, string id) : this(discription, format, uri)
+        {
+            this.Data.id = id;
         }
         public override string GetID()
         {
             return this.Data.id;
+        }
+        public object Clone()
+        {
+            return new Presentation(Data.discription, URI, FormatOfPresentation,Data.id);
         }
     }
 }

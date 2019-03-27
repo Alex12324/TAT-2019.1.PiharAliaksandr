@@ -8,9 +8,9 @@ namespace DEV_4
 {
     class Lectures : Materials
     {
-        List<Presentation> ListOfPresentations = new List<Presentation>();
-        List<SeminarSession> ListOfSeminars = new List<SeminarSession>();
-        List<LaboratoryResearchcs> ListOfLabworks = new List<LaboratoryResearchcs>();
+        public List<Presentation> ListOfPresentations = new List<Presentation>();
+        public List<SeminarSession> ListOfSeminars = new List<SeminarSession>();
+        public List<LaboratoryResearchcs> ListOfLabworks = new List<LaboratoryResearchcs>();
         public string text;
         public string Text
         {
@@ -33,8 +33,26 @@ namespace DEV_4
         public Lectures(string discription, string text) : base(discription)
         {
             this.Text = text;
-            this.Data.Discription = discription;
-            this.Data.id = Data.id;
+        }
+        private Lectures(string discription, string text, List<Presentation> ListOfPresentations,
+            List<SeminarSession> ListOfSeminars, List<LaboratoryResearchcs> ListOfLabworks,string id) : this(discription, text)
+        {
+            this.ListOfPresentations = new List<Presentation>();
+            this.ListOfSeminars = new List<SeminarSession>();
+            this.ListOfLabworks = new List<LaboratoryResearchcs>();
+            foreach (var el in ListOfPresentations)
+            {
+                this.ListOfPresentations.Add((Presentation)el.Clone());
+            }
+            foreach (var el in ListOfSeminars)
+            {
+                this.ListOfSeminars.Add((SeminarSession)el.Clone());
+            }
+            foreach (var el in ListOfLabworks)
+            {
+                this.ListOfLabworks.Add((LaboratoryResearchcs)el.Clone());
+            }
+            this.Data.id = id;
         }
         public List<Presentation> AddingPresentation()
         {
@@ -96,6 +114,10 @@ namespace DEV_4
         public override string GetID()
         {
             return this.Data.id;
+        }
+        public object Clone()
+        {
+            return new Lectures(this.Data.discription,this.text,this.ListOfPresentations,this.ListOfSeminars,this.ListOfLabworks,this.Data.id);
         }
     }
 }
