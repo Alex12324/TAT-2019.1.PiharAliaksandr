@@ -7,9 +7,8 @@ namespace DEV_5
     /// </summary>
     class Bird : IFlyable
     {
-        Random rand = new Random();
         public Point PointBird { get; set; }
-        public int BirdSpeed = 0;
+        public int BirdSpeed;
         public double Distance { get; set; }
         public string ClassName
         {
@@ -28,7 +27,7 @@ namespace DEV_5
         public Bird(int x = 0, int y = 0, int z = 0)
         {
             PointBird = new Point(x, y, z);
-            BirdSpeed += rand.Next(1, 20);
+            BirdSpeed = new Random().Next(1, 20);
         }
 
         /// <summary>
