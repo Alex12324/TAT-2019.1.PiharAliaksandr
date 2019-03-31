@@ -21,7 +21,6 @@ namespace DEV_5
                     el.FlyTo(new Point(100, 200, 800));
                     Console.WriteLine(el.WhoAmI());
                     Console.WriteLine(el.GetFlyTime()); //Time is measured in hours.
-
                 }
             }
             catch(Exception ex)
