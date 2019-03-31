@@ -3,7 +3,7 @@ namespace DEV_5
 {
     class SpaceShip : IFlyable
     {
-        public Point PointSpaceShip;
+        public Point PointSpaceShip { get; set; }
         public const int SpaceShipSpeed = 8000 * 3600;
         public double Distance { get; set; }
         public string ClassName

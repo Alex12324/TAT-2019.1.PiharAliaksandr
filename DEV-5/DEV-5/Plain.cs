@@ -6,9 +6,9 @@ namespace DEV_5
     /// </summary>
     class Plane : IFlyable
     {
+        public Point PointPlane { get; set; }
         public int PlaneSpeed { get; set; } = 200;
         public double Distance { get; set; } = 0;
-        Point PointPlane { get; set; }
         public string ClassName
         {
             get
