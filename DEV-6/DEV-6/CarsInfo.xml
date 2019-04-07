@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<cars>
+  <car name ="Ford Focus">
+    <brand>Ford</brand>
+    <model>Focus</model>
+    <count>5</count>
+    <price>10000</price>
+  </car>
+  <car name ="Mazda 6">
+    <brand>Mazda</brand>
+    <model>6</model>
+    <count>3</count>
+    <price>12000</price>
+  </car>
+    <car name ="BMW X6">
+      <brand>BMW</brand>
+      <model>X6</model>
+      <count>3</count>
+      <price>20000</price>
+    </car>
+  <car name ="Nissan Silvia">
+    <brand>Nissan</brand>
+    <model>Silvia</model>
+    <count>10</count>
+    <price>8000</price>
+  </car>
+</cars>
