@@ -12,6 +12,12 @@
     <count>3</count>
     <price>12000</price>
   </car>
+  <car name ="Mazda 3">
+    <brand>Mazda</brand>
+    <model>3</model>
+    <count>1</count>
+    <price>15000</price>
+  </car>
     <car name ="BMW X6">
       <brand>BMW</brand>
       <model>X6</model>

@@ -1,23 +1,31 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Xml;
 
 namespace DEV_6
 {
+    /// <summary>
+    /// A class that retrieves machine information from an XML file.
+    /// </summary>
     class XMLFileOfCars
     {
         XmlDocument CarsInfo { get; }
         public AutoShow autoShow;
 
+        /// <summary>
+        /// Initializing the xml document and creating a showroom for these machines.
+        /// </summary>
+        /// <param name="CarsInfo"></param>
         public XMLFileOfCars(XmlDocument CarsInfo)
         {
             this.CarsInfo = CarsInfo;
             autoShow = new AutoShow();
         }
 
+        /// <summary>
+        /// A method that takes information from an xml file and creates a machine object.
+        /// </summary>
         public void GettingInfoAndCreatingCar()
         {
             XmlElement xRoot = CarsInfo?.DocumentElement;

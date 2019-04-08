@@ -1,13 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace DEV_6
 {
+    /// <summary>
+    /// Interface for pattern command.
+    /// </summary>
     interface ICommand
-    {
+    {   
+        /// <summary>
+        /// Interface method.
+        /// </summary>
+        /// <param name="type"></param>
+        /// <returns></returns>
         int Execute(string type);
     }
 }

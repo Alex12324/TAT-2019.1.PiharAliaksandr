@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace DEV_6
 {
+    /// <summary>
+    /// Class car.
+    /// </summary>
     class Car
     {
         public string Brand { get; set; }
@@ -13,6 +11,13 @@ namespace DEV_6
         public int Count { get; set; }
         public int Price { get; set; }
 
+        /// <summary>
+        /// Class constructor.
+        /// </summary>
+        /// <param name="brand"></param>
+        /// <param name="model"></param>
+        /// <param name="count"></param>
+        /// <param name="price"></param>
         public Car(string brand, string model, int count, int price)
         {
             this.Brand = brand;

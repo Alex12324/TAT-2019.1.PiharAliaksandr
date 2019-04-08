@@ -1,19 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Xml;
 
 namespace DEV_6
 {
+    /// <summary>
+    /// Entry point class.
+    /// </summary>
     class EntryPoint
-    {
+    {   
+        /// <summary>
+        /// Entry point function.
+        /// </summary>
+        /// <param name="args">Name of XML-file</param>
         static void Main(string[] args)
         {
             try
             {
-                if (args.Length < 1)
+                if (args.Length == 0)
                 {
                     throw new ArgumentOutOfRangeException("This XML file doesn't exist.");
                 }
@@ -22,7 +25,7 @@ namespace DEV_6
                 XMLFileOfCars reading = new XMLFileOfCars(xmlDocument);
                 Client client = new Client(reading.autoShow);
                 reading.GettingInfoAndCreatingCar();
-                client.CommandResponses();
+                client.CommandResponses(reading.autoShow.Cars);
             }
             catch(Exception ex)
             {

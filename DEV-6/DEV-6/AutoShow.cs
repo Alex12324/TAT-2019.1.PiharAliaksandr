@@ -1,30 +1,39 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace DEV_6
 {
+    /// <summary>
+    /// Сlass showroom where my cars are stored.
+    /// </summary>
     class AutoShow
     {
         public List<Car> Cars = new List<Car>();
 
+        /// <summary>
+        /// Method for counting the number of car brands.
+        /// </summary>
+        /// <param name="type"></param>
+        /// <returns></returns>
         public int CountTypesCars(string type)
         {
             int CountOfTypes = 0;
             List<string> ListOfTypes = new List<string>();
             foreach (var car in Cars)
             {
-                if (!ListOfTypes.Contains(car.Model))
+                if (!ListOfTypes.Contains(car.Brand))
                 {
                     CountOfTypes++;
-                    ListOfTypes.Add(car.Model);
+                    ListOfTypes.Add(car.Brand);
                 }
             }
             return CountOfTypes;
         }
 
+        /// <summary>
+        /// Method for counting the number of all cars
+        /// </summary>
+        /// <param name="type"></param>
+        /// <returns></returns>
         public int CountAllCars(string type)
         {
             int counter = 0;
@@ -35,6 +44,11 @@ namespace DEV_6
             return counter;
         }
 
+        /// <summary>
+        /// Method for calculating the average cost of cars.
+        /// </summary>
+        /// <param name="type"></param>
+        /// <returns></returns>
         public int AveragePriceCar(string type)
         {
             int AllPrice = 0;
@@ -47,6 +61,11 @@ namespace DEV_6
             return (int)(AllPrice / AllCars);
         }
 
+        /// <summary>
+        /// Method for calculating the average cost of cars by brand.
+        /// </summary>
+        /// <param name="brand"></param>
+        /// <returns></returns>
         public int AveragePriceTypeCar(string brand)
         {
             int AllPriceType = 0;
@@ -55,12 +74,11 @@ namespace DEV_6
             {
                 if (car.Brand == brand)
                 {
-                    AllPriceType += car.Price;
+                    AllPriceType += car.Price * car.Count;
                     AllCarsType += car.Count;
                 }
             }
             return AllPriceType / AllCarsType;
         }
-
     }
 }
