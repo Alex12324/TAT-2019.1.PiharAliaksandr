@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<cars>
+  <car>
+    <brand>MAZ</brand>
+    <model>2000</model>
+    <count>2</count>
+    <price>100000</price>
+  </car>
+  <car>
+    <brand>MAZ</brand>
+    <model>241</model>
+    <count>3</count>
+    <price>90000</price>
+  </car>
+  <car>
+    <brand>KAMAZ</brand>
+    <model>5320</model>
+    <count>2</count>
+    <price>110000</price>
+  </car>
+</cars>
