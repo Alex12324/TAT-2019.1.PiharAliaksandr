@@ -7,7 +7,7 @@ namespace DEV_2
     /// <summary>
     /// In this class phonetic parsing of the word is performed.
     /// </summary>
-    class PhoneticConverter
+    public class PhoneticConverter
     {
         private string word;
         private StringBuilder newString = new StringBuilder();
@@ -53,9 +53,53 @@ namespace DEV_2
         }
 
         /// <summary>
+        /// Word properties.
+        /// </summary>
+        private string Word
+        {
+            get
+            {
+                return word;
+            }
+            set
+            {
+                if (value.Length == 0)
+                {
+                    throw new Exception("No word was entered.");
+                }
+                if (value[0] == '+')
+                {
+                    throw new Exception("The stress cannot be the first character. ");
+                }
+                if (!value.Contains("+"))
+                {
+                    var temporaryListOfVowels = new List<string>();
+                    foreach (var el in value)
+                    {
+                        if (ListOfVowels.Contains(el.ToString()))
+                        {
+                            temporaryListOfVowels.Add(el.ToString());
+                        }
+                    }
+                    if (temporaryListOfVowels.Count > 1 && !temporaryListOfVowels.Contains("ё"))
+                    {
+                        throw new Exception("No stress in the word.");
+                    }
+                }
+                for (int i = 1; i < value.Length - 1; i++)
+                {
+                    if (ListOfConsonants.Contains(value[i].ToString()) && value[i + 1] == '+')
+                    {
+                        throw new Exception("The stress after the consonant.");
+                    }
+                }
+
+            }
+        }
+        /// <summary>
         ///This method realized all functions to convert a string. 
         /// </summary>
-        public void Converter()
+        public StringBuilder Converter()
         {   
             if(StressСheck() == true)
             {
@@ -66,10 +110,11 @@ namespace DEV_2
                 SoftVowelsConverter();
                 RingingAndDeafConverter();
                 NewStringMaker();
+                return newString;
             }
             else
             {
-                Console.WriteLine("Unexpected error");
+                throw new Exception("Unexpected error");
             }  
         }
 
@@ -80,11 +125,11 @@ namespace DEV_2
         private bool StressСheck()
         {
             int counterOfVowel = 0;
-            if (!word.Contains("+"))
+            if (!Word.Contains("+"))
             {
-                if (!word.Contains("ё"))
+                if (!Word.Contains("ё"))
                 {
-                    foreach (var el in word)
+                    foreach (var el in Word)
                     {
                         if (ListOfVowels.Contains(el.ToString()))
                         {
@@ -108,18 +153,18 @@ namespace DEV_2
         /// </summary>
         private void EnumArray()
         {
-            for (int i = 0; i < word.Length; i++)
+            for (int i = 0; i < Word.Length; i++)
             {
                 Letters obj = new Letters();
                 if (i != 0)
                 {
-                    obj.Prev = word[i - 1].ToString();
+                    obj.Prev = Word[i - 1].ToString();
                 }
-                if (i != word.Length - 1)
+                if (i != Word.Length - 1)
                 {
-                    obj.Next = word[i + 1].ToString();
+                    obj.Next = Word[i + 1].ToString();
                 }
-                obj.Current = word[i].ToString();
+                obj.Current = Word[i].ToString();
                 ListOfLetters.Add(obj);
             }
         }
@@ -244,13 +289,14 @@ namespace DEV_2
         /// <summary>
         /// This method connected all class objects Letters in one string.
         /// </summary>
-        private void NewStringMaker()
+        private StringBuilder NewStringMaker()
         {
             foreach (var elem in ListOfLetters)
             {
                 newString.Append(elem.Current);
             }
             newString.Replace("ь", "'");
+            return newString;
         }
 
         /// <summary>
@@ -258,7 +304,7 @@ namespace DEV_2
         /// </summary>
         public void Display()
         {
-            Console.WriteLine(newString);
+            Console.WriteLine(newString.ToString());
         }
     }
 }
