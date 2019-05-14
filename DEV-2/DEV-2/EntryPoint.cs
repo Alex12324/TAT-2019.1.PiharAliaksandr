@@ -15,10 +15,13 @@ namespace DEV_2
         {
             try
             {
-                PhoneticConverter elem = new PhoneticConverter(args[0]);
+                /*PhoneticConverter elem = new PhoneticConverter("молоко+");
                 elem.Converter();
-                elem.Display();
-                
+                var stringg = elem.NewStringMaker();*/
+                var receivedString = new PhoneticConverter("молоко+");
+                var actualString = receivedString.Converter();
+                Console.WriteLine(actualString);
+                Console.WriteLine(actualString.Equals("малако"));
             }
             catch (IndexOutOfRangeException)
             {

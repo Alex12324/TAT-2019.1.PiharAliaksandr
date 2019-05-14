@@ -5,7 +5,7 @@ namespace DEV_2
     /// <summary>
     /// My letter class.
     /// </summary>
-    class Letters
+    public class Letters
     {
         public string Current { get; set; }
         public string Next { get; set; }
