@@ -1,0 +1,24 @@
+[
+  {
+
+    "ID": 1,
+    "Town": "California",
+    "Street": "Lenina",
+    "House": 1,
+    "Country": "USA"
+  },
+  {
+    "ID": 2,
+    "Town": "Beijing",
+    "Street": "Gagarina",
+    "House": 2,
+    "Country": "China"
+  },
+  {
+    "ID": 3,
+    "Town": "Seoul",
+    "Street": "Pushkinskay",
+    "House": 3,
+    "Country": "South Korea"
+  }
+]

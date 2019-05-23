@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "name": "Apple",
+    "count": 10,
+    "manufacturer_ID": 1,
+    "warehouse_ID": 1,
+    "shipping_description_ID": 3,
+    "production_date": "21.05.2019"
+  },
+  {
+    "id": 2,
+    "name": "Samsung",
+    "count": 5,
+    "manufacturer_ID": 2,
+    "warehouse_ID": 2,
+    "shipping_description_ID": 2,
+    "production_date": "20.05.2019"
+  },
+  {
+    "id": 3,
+    "name": "Xiaomi",
+    "count": 7,
+    "manufacturer_ID": 3,
+    "warehouse_ID": 3,
+    "shipping_description_ID": 1,
+    "production_date": "19.05.2019"
+  }
+]
