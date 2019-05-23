@@ -1,0 +1,17 @@
+[
+  {
+    "ID": 1,
+    "Name": "California",
+    "AddressID": "1"
+  },
+  {
+    "ID": 2,
+    "Name": "Beijing",
+    "AddressID": "2"
+  },
+  {
+    "ID": 3,
+    "Name": "Seoul",
+    "AddressID": "3"
+  }
+]
